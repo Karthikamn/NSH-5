@@ -1,15 +1,16 @@
 name: First Workflow
 
-on: [ push , pull_request,workflow_dispatch ] 
+on:
+ workflow_dispatch:
+  
+   
 
 jobs:
  build:
   runs-on: ubuntu-latest
   steps:
-   - name: Echo stts
-     run: echo 'First Workflow'
- test:
-  runs-on: windows-latest
-  steps:
-   - name: Echo stts
-     run: echo 'First Workflow'
+    - name: Setup Java JDK
+      uses: actions/setup-java@v3.14.1
+      with:
+        java-version: '17'
+        distribution: 'microsoft'
