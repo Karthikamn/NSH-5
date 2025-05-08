@@ -1,0 +1,15 @@
+name: First Workflow
+
+on: push 
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Echo stts
+   - run: echo 'First Workflow'
+ test:
+  runs-on: windows-latest
+  steps:
+   - name: Echo stts
+   - run: echo 'First Workflow'
