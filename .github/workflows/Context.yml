@@ -13,5 +13,5 @@ jobs:
    - name: Display 
      env:
       MY_VAR: 'steps'
-     run: echo '${{env.MY_VAR}}'
+     run: echo ' ${{vars.MY_VAR}}'
   
