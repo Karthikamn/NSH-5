@@ -13,5 +13,5 @@ jobs:
    - name: Display 
      env:
       MY_VAR: 'steps'
-     run: echo ' ${{vars.MY_VAR}}'
+     run: echo '${{secrets.API_KEY}}'
   
