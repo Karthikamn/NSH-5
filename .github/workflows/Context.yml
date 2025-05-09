@@ -6,12 +6,18 @@ on:
  push
 jobs:
  github-context:
-  runs-on: ubuntu-latest
-  env:
-   MY_VAR: 'jobs'
+  runs-on: ${{matrix.os}}
+  strategy:
+   matrix:
+    os: 
+     - ubuntu-latest
+     - windows-latest
+    node-version: [v22, v21]
   steps:
-   - name: Display 
-     env:
-      MY_VAR: 'steps'
-     run: echo '${{secrets.API_KEY}}'
+   - uses: actions/setup-node@v4
+     with:
+      node-version: ${{matrix.node-version}}
+   - name: Perform test
+     run: echo '${{matrix.os}} and ${{matrix.node-version}}'
+      
   
