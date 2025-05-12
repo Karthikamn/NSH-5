@@ -19,5 +19,8 @@ jobs:
       node-version: ${{matrix.node-version}}
    - name: Perform test
      run: echo '${{matrix.os}} and ${{matrix.node-version}}'
-      
-  
+ display-info:
+     needs: github-context
+     runs-on: ubuntu-latest
+     steps:
+      - run:  echo 'Display Info'
