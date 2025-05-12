@@ -1,9 +1,15 @@
 name: Context
 
+run-name: ${{inputs.debug}}
+
 env:
  MY_VAR: 'workflow'
 on:
- push
+ workflow_dispatch:
+  inputs:
+   debug:
+    type: boolean
+    default: false
 jobs:
  github-context:
   runs-on: ${{matrix.os}}
