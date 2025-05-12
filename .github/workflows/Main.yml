@@ -1,0 +1,9 @@
+name: Main for Reusable
+
+on: 
+ push
+jobs:
+ reusable:
+  uses: ./.github/workflows/reusable.yml
+  with:
+   message: 'Hello Welcome to reusable workflow'
